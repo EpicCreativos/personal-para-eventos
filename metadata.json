@@ -1,0 +1,6 @@
+{
+  "name": "Personal para Eventos",
+  "description": "Página de inicio premium para la agencia líder en selección y gestión de personal para eventos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

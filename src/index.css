@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Artistic premium keyframes for moving vector stains */
+  --animate-artistic-float: artistic-float 10s ease-in-out infinite;
+  --animate-artistic-pulse: artistic-pulse 14s ease-in-out infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+
+  @keyframes artistic-float {
+    0%, 100% {
+      transform: translateY(0px) scale(1) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) scale(1.05) rotate(5deg);
+    }
+    66% {
+      transform: translateY(10px) scale(0.95) rotate(-5deg);
+    }
+  }
+
+  @keyframes artistic-pulse {
+    0%, 100% {
+      opacity: 0.12;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.22;
+      transform: scale(1.15) translate(10px, -10px);
+    }
+  }
+}
+
+@layer utilities {
+  /* Soft high-dispersion shadow for neumorphic/premium card designs */
+  .shadow-soft {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+  }
+}
+
+/* ==========================================================================
+   PREMIUM MOBILE & TABLET HARMONIZATION SYSTEM (UNDER 1024px)
+   ========================================================================== */
+
+/* 1. GLOBAL LAYOUT SAFEGUARDS (Prevents horizontal overflow absolutely and ensures consistent breathing margins) */
+@media (max-width: 1023px) {
+  body, html, #root {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Optimize container widths - replaces rigid 80% to beautifully responsive & breathing width on smaller displays */
+  .w-\[80\%\] {
+    width: 92% !important; /* Elegant 4% side margins on mobile */
+  }
+}
+
+/* 2. RESPONSIVE HARMONIZATION FOR SMARTPHONES (Under 640px) */
+@media (max-width: 639px) {
+  /* Harmonized typographic hierarchy rule-sets with strict step-down contrast */
+  
+  /* H1 / Page Main Title (Giro) */
+  h1, 
+  .text-5xl, 
+  .text-6xl, 
+  .text-7xl, 
+  .text-\[6\.25rem\], 
+  .text-\[5\.5rem\] {
+    font-size: 2.85rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  /* H2 / Section Titles */
+  h2,
+  .text-4xl {
+    font-size: 1.625rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* H3 / Subsections, Card & Profile Names */
+  h3,
+  .text-3xl,
+  .text-2xl {
+    font-size: 1.225rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* H4 / Mini Headers, FAQs & List Labels */
+  h4,
+  .text-xl {
+    font-size: 1.05rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Standard plain body text harmonization for exquisite readability on phone screens */
+  p,
+  li,
+  .text-base,
+  .text-sm,
+  .text-lg {
+    font-size: 0.925rem !important;
+    line-height: 1.625 !important;
+  }
+
+  /* Small captions / sublabels */
+  .text-xs,
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 0.775rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* 3. RESPONSIVE HARMONIZATION FOR TABLETS (Between 640px and 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Optimize container width for ipad & regular tablets */
+  .w-\[80\%\] {
+    width: 88% !important; /* Perfectly proportioned sidebar padding */
+  }
+
+  /* Harmonized typographic hierarchy rule-sets for tablet */
+
+  /* H1 / Page Main Title (Giro) */
+  h1, 
+  .text-5xl, 
+  .text-6xl, 
+  .text-7xl, 
+  .text-\[6\.25rem\], 
+  .text-\[5\.5rem\] {
+    font-size: 2.75rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  /* H2 / Section Titles */
+  h2,
+  .text-4xl {
+    font-size: 2.05rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* H3 / Subsections, Card & Profile Names */
+  h3,
+  .text-3xl,
+  .text-2xl {
+    font-size: 1.4rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* H4 / Mini Headers, FAQs & List Labels */
+  h4,
+  .text-xl {
+    font-size: 1.125rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Standard body text harmonization for tablet viewports */
+  p,
+  li,
+  .text-base,
+  .text-sm,
+  .text-lg {
+    font-size: 0.975rem !important;
+    line-height: 1.625 !important;
+  }
+
+  /* Small captions / sublabels */
+  .text-xs,
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 0.825rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
